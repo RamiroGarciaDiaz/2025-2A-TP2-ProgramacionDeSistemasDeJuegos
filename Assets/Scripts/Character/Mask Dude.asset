@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abaf015317678442a4cdace8cc3bf7b, type: 3}
   m_Name: Mask Dude
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3659010567693264050, guid: b5bfe69065726de4fb7277dbb1fcec73, type: 3}
+  prefab: {fileID: 6779143174161877438, guid: b5bfe69065726de4fb7277dbb1fcec73, type: 3}
   characterModel:
     <Acceleration>k__BackingField: 5
     <Speed>k__BackingField: 2

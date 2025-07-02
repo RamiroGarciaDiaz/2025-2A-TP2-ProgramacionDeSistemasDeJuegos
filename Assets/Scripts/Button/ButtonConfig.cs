@@ -10,6 +10,5 @@ public class ButtonConfig : ScriptableObject
     {
         public string buttonTitle;
         public CharacterPrefab characterPrefab;
-        public Sprite icon;
     }
 }

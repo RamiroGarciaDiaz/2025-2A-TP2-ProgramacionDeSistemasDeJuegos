@@ -14,12 +14,10 @@ public class PlayerController : MonoBehaviour, ISetup<IPlayerControllerModel>
     private void Awake()
     {
         _character = GetComponent<Character>();
-        Debug.Log("[PlayerController] Awake en: " + gameObject.name);
     }
 
     public void Setup(IPlayerControllerModel model)
     {
-        Debug.Log("[PlayerController] Setup llamado en: " + gameObject.name);
         Model = model;
         if (Model.MoveInput?.action != null)
         {
@@ -45,7 +43,6 @@ public class PlayerController : MonoBehaviour, ISetup<IPlayerControllerModel>
     private void HandleMoveInput(InputAction.CallbackContext ctx)
     {
         var direction = ctx.ReadValue<Vector2>().x;
-        Debug.Log("Direction: " + direction);
         if (_isJumping || _isDoubleJumping)
             direction *= Model.AirborneSpeedMultiplier;
         _character?.SetDirection(direction);

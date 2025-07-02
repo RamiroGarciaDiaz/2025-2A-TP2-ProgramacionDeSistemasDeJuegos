@@ -8,10 +8,6 @@ public class MenuSpawner : MonoBehaviour
 
     private void Start()
     {
-
-        Debug.Log("ButtonFactory: " + buttonFactory);
-        Debug.Log("Parent: " + parent);
-        Debug.Log("Configs: " + (configs != null ? configs.Length.ToString() : "null"));
         buttonFactory.Setup(parent);
 
         foreach (var config in configs)
