@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SpawnButton : MonoBehaviour
 {
     [SerializeField] private Button button;
+    [SerializeField] private CharacterPrefab character;
 
     private void Reset()
         => button = GetComponent<Button>();
@@ -33,7 +34,8 @@ public class SpawnButton : MonoBehaviour
 
     private void HandleClick()
     {
+        Debug.Log("Botón presionado. CharacterPrefab: " + (character ? character.name : "None"));
         var spawner = FindFirstObjectByType<CharacterSpawner>();
-        spawner.Spawn();
+        spawner.Spawn(character);
     }
 }

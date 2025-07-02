@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eabff2f8a9d5de4e8781160fb18f0dd, type: 3}
+  m_Name: ButtonConfig
+  m_EditorClassIdentifier: 
+  entries:
+  - buttonTitle: Mask Dude
+    characterPrefab: {fileID: 11400000, guid: b6e5467bafecc2f489207f5fb8bbef41, type: 2}
+    icon: {fileID: -552709612, guid: 1351e9d5c288511409f45a293e37c05e, type: 3}
+  - buttonTitle: Ninja Frog
+    characterPrefab: {fileID: 11400000, guid: 02b1fa4175d5c8545bd9a5b5c03e911c, type: 2}
+    icon: {fileID: 1129767538, guid: cabcc74d44f5e344b8ba0a771bf21ee7, type: 3}
+  - buttonTitle: Pink Man
+    characterPrefab: {fileID: 11400000, guid: dc49770b82484514bbdadc437f985c83, type: 2}
+    icon: {fileID: 925845291, guid: 0613dbd897fd1da4ebe622012620fb49, type: 3}
+  - buttonTitle: Virtual Guy
+    characterPrefab: {fileID: 11400000, guid: d47dbaef3cd5f624cb9585b4ebccc5a2, type: 2}
+    icon: {fileID: 8644832591467991550, guid: 181476a881b18aa40aae9ca72ee79d1e, type: 3}
