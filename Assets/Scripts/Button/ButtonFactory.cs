@@ -8,11 +8,6 @@ public class ButtonFactory : MonoBehaviour, IButtonFactory<ButtonConfig.ButtonEn
     [SerializeField] private Button _buttonPrefab;
     private Transform _parent;
 
-    public ButtonFactory(Button buttonPrefab)
-    {
-        _buttonPrefab = buttonPrefab;
-    }
-
     public void Setup(Transform parent)
     {
         _parent = parent;
