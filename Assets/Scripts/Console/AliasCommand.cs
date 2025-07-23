@@ -1,8 +1,8 @@
-public class AliasesCommand : IConsoleCommand
+public class AliasCommand : IConsoleCommand
 {
     public string Name => "aliases";
     public string[] Aliases => new[] { "aliases", "as" };
-    public string Description => "Displays all aliases for a command: aliases <command>\"";
+    public string Description => "Displays all aliases for a command: aliases <command>";
 
     public void Execute(string[] args)
     {

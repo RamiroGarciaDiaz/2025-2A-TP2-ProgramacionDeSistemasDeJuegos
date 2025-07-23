@@ -1,28 +1,23 @@
+using System;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class MenuSpawner : MonoBehaviour
+public class MenuSpawner<T>
 {
-    [SerializeField] private ButtonFactory buttonFactory;
-    [SerializeField] private Transform parent;
-    [SerializeField] private ButtonConfig[] configs;
-
-    private void Start()
+    public void BuildMenu(IEnumerable<T> entries, Transform buttonLayout, Func<T, string> getTitle, Action<T> onClick)
     {
-        buttonFactory.Setup(parent);
+        foreach (Transform child in buttonLayout)
+            UnityEngine.Object.Destroy(child.gameObject);
 
-        foreach (var config in configs)
-        {          
-            foreach (var entry in config.entries)
-            {
-                buttonFactory.CreateButton(entry, OnButtonClick);
-            }
+        var abstractFactory = ServiceLocator.Get<IButtonAbstractFactory>();
+        var factory = abstractFactory.GetFactory<T>();
+        factory.Setup(buttonLayout);
+
+        foreach (var entry in entries)
+        {
+            var button = factory.CreateButton(entry, onClick);
+            button.GetComponentInChildren<TextMeshProUGUI>().text = getTitle(entry);
         }
-    }
-
-    private void OnButtonClick(ButtonConfig.ButtonEntry entry)
-    {
-        var spawner = FindFirstObjectByType<CharacterSpawner>();
-        if (spawner && entry.characterPrefab)
-            spawner.Spawn(entry.characterPrefab);
     }
 }

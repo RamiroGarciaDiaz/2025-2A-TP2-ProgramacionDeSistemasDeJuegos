@@ -3,10 +3,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonFactory : MonoBehaviour, IButtonFactory<ButtonConfig.ButtonEntry>
+public class CharacterButtonFactory : IButtonFactory<ButtonConfig.ButtonEntry>
 {
-    [SerializeField] private Button _buttonPrefab;
+    private readonly Button _buttonPrefab;
     private Transform _parent;
+
+    public CharacterButtonFactory(Button buttonPrefab)
+    {
+        _buttonPrefab = buttonPrefab;
+    }
 
     public void Setup(Transform parent)
     {
@@ -15,7 +20,7 @@ public class ButtonFactory : MonoBehaviour, IButtonFactory<ButtonConfig.ButtonEn
 
     public Button CreateButton(ButtonConfig.ButtonEntry entry, Action<ButtonConfig.ButtonEntry> onClick)
     {
-        var buttonInstance = Instantiate(_buttonPrefab, _parent);
+        var buttonInstance = UnityEngine.Object.Instantiate(_buttonPrefab, _parent);
         var text = buttonInstance.GetComponentInChildren<TextMeshProUGUI>();
         text.text = entry.buttonTitle;
         buttonInstance.onClick.AddListener(() => onClick?.Invoke(entry));

@@ -12,9 +12,7 @@ public class PlayerController : MonoBehaviour, ISetup<IPlayerControllerModel>
     private Coroutine _jumpCoroutine;
 
     private void Awake()
-    {
-        _character = GetComponent<Character>();
-    }
+        => _character = GetComponent<Character>();
 
     public void Setup(IPlayerControllerModel model)
     {
@@ -26,9 +24,9 @@ public class PlayerController : MonoBehaviour, ISetup<IPlayerControllerModel>
             Model.MoveInput.action.canceled += HandleMoveInput;
         }
         if (Model.JumpInput?.action != null)
-            
             Model.JumpInput.action.performed += HandleJumpInput;
     }
+
     private void OnDisable()
     {
         if (Model.MoveInput?.action != null)

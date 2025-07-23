@@ -30,7 +30,7 @@ public class ConsoleController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
        
         RegisterCommand(new HelpCommand());
-        RegisterCommand(new AliasesCommand());
+        RegisterCommand(new AliasCommand());
         RegisterCommand(new PlayAnimationCommand());
 
         consolePanel.SetActive(false);

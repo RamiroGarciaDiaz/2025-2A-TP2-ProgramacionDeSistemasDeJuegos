@@ -12,7 +12,6 @@ public class Character : MonoBehaviour, ISetup<CharacterModel>
     private void Awake()
         => _rigidbody = GetComponent<Rigidbody2D>();
 
-    
     public void Setup(CharacterModel model)
         => Model = model;
 
